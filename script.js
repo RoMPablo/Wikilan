@@ -39,3 +39,4 @@ function toggleTheme() {
   body.classList.toggle('light-mode');
   button.textContent = body.classList.contains('light-mode') ? '🌞' : '🌙';
 }
+

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="favicon.png" rel="icon" type="image/png" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+    <link href="imagenes/logo wikilan.png" rel="icon" type="image/png" />
+
+</head>
+
+<body>
+    
+  <!-- Header fijo -->
+
+  <header class="sticky">
+
+    <!-- Logo esquina superior izquierda -->
+    
+    <div class="logo"><img alt="Wikilan logo" src="imagenes/logo wikilan.png" style="height: 40px;" /></div>
+    
+    <!-- Menú despegable para movil-->
+
+    <button aria-label="Abrir menú" class="menu-btn" onclick="toggleMenu()">
+      <span></span> <span></span> <span></span>
+    </button>
+
+    <!-- Menú navegación principal -->
+
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="index.html#planes">Planes</a>
+      <a href="index.html#servicios">Servicios</a>
+      <a href="index.html#faq">FAQs</a>
+      <a href="index.html#contacto">Contacto</a>
+      <a href="wikipacks.html">WikiPacks</a>
+    </nav>
+
+  </header>
+
+  <main>
+
+    <div class="formulario-flotante">
+      <h1>Solicitud de Cambio de Plan</h1>
+      
+      <form>
+        <!-- Información personal -->
+        <div class="campo-formulario">
+          <label for="nombre">Nombre completo</label>
+          <input type="text" id="nombre" required>
+        </div>
+        
+        <div class="campo-formulario">
+          <label for="email">Correo electrónico</label>
+          <input type="email" id="email" required>
+        </div>
+        
+        <div class="campo-formulario">
+          <label for="telefono">Teléfono de contacto</label>
+          <input type="tel" id="telefono" required>
+        </div>
+        
+        <hr class="separador">
+        
+        <!-- Información del plan -->
+        <h3 class="subtitulo">Zona de instalación</h3>
+        <div class="campo-formulario">
+          <select id="zona" required>
+            <option value="">Seleccione su zona</option>
+            <option value="chaparrito">Chaparrito</option>
+            <option value="puente">Puente de la Guareña/Cuartillos</option>
+            <option value="abiertas">Las Abiertas</option>
+          </select>
+        </div>
+        
+        <h3 class="subtitulo">Plan deseado</h3>
+        <div class="campo-formulario">
+          <select id="plan" required>
+            <option value="">Seleccione el nuevo plan</option>
+            <option value="100mb">100Mb + 60GB Móvil (40,90€/mes)</option>
+            <option value="300mb">300Mb + 10GB Móvil (39,95€/mes)</option>
+          </select>
+        </div>
+
+        
+        <button type="submit" class="btn-enviar-formulario">Enviar Solicitud</button>
+        
+      </form>
+    </div>
+
+    </main>
+</body>
+</html>
