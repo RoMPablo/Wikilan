@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>WikiPacks - Ofertas</title>
+  <link href="favicon.png" rel="icon" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+<!-- Descripción de la pagina -->
+
+  <meta content="Internet y telefonía con Wikilan. Cobertura en zonas rurales y atención personalizada."
+    name="description" />
+</head>
+
+<body>
+
+  <!-- Header fijo -->
+
+  <header class="sticky">
+
+    <!-- Logo esquina superior izquierda -->
+    
+    <div class="logo"><img alt="Wikilan logo" src="imagenes/logo wikilan.png" style="height: 40px;" /></div>
+    
+    <!-- Menú despegable para movil-->
+
+    <button aria-label="Abrir menú" class="menu-btn" onclick="toggleMenu()">
+      <span></span> <span></span> <span></span>
+    </button>
+
+    <!-- Menú navegación principal -->
+
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="index.html#planes">Planes</a>
+      <a href="index.html#servicios">Servicios</a>
+      <a href="index.html#faq">FAQs</a>
+      <a href="index.html#contacto">Contacto</a>
+      <a href="wikipacks.html">WikiPacks</a>
+    </nav>
+  </header>
+
+<!-- Contenido Principal de la página -->
+
+  <main>
+    <section class="plans">
+      <h2>WikiPacks</h2>
+      <p style="text-align: center;">Selecciona tu zona para ver las ofertas disponibles.</p>
+
+      <!-- Selector de zona donde reside el comprador -->
+
+      <div class="zona-selector">
+        <label for="zona">¿Cuál es tu zona?</label>
+        <select id="zona" onchange="mostrarZona()">
+          <option value="">Seleccionar zona</option>
+          <option value="chaparrito">Chaparrito</option>
+          <option value="puente">Puente de la Guareña / Cuartillos</option>
+          <option value="abiertas">Las Abiertas</option>
+        </select>
+      </div>
+
+      <!-- Contenido de las ofertas por zona -->
+
+      <div class="zona-content" id="chaparrito">
+        <h3 style="text-align: center; margin-top: 2rem;">Ofertas para Chaparrito</h3>
+        <div class="cards">
+          <div class="plan-card">
+            <div class="plan-speed"><i class="fas fa-bolt"
+                style="display: block; color: var(--color-accent); font-size: 1.6rem; margin-bottom: 0.5rem;"></i>100Mb
+              + 60GB Móvil</div>
+            <div class="plan-price">40,90 €/mes</div>
+            <button class="btn">Contratar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="zona-content" id="puente">
+        <h3 style="text-align: center; margin-top: 2rem;">Ofertas para Puente de la Guareña / Cuartillos</h3>
+        <div class="cards">
+          <div class="plan-card">
+            <div class="plan-speed"><i class="fas fa-bolt"
+                style="display: block; color: var(--color-accent); font-size: 1.6rem; margin-bottom: 0.5rem;"></i>300Mb
+              + 10GB Móvil</div>
+            <div class="plan-price">39,95 €/mes</div>
+            <button class="btn">Contratar</button>
+          </div>
+          <div class="plan-card">
+            <div class="plan-speed"><i class="fas fa-bolt"
+                style="display: block; color: var(--color-accent); font-size: 1.6rem; margin-bottom: 0.5rem;"></i>600Mb
+              + 20GB Móvil</div>
+            <div class="plan-price">44,95 €/mes</div>
+            <button class="btn">Contratar</button>
+          </div>
+          <div class="plan-card">
+            <div class="plan-speed"><i class="fas fa-bolt"
+                style="display: block; color: var(--color-accent); font-size: 1.6rem; margin-bottom: 0.5rem;"></i>1Gb +
+              50GB Móvil</div>
+            <div class="plan-price">54,95 €/mes</div>
+            <button class="btn">Contratar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="zona-content" id="abiertas">
+        <h3 style="text-align: center; margin-top: 2rem;">Ofertas para Las Abiertas</h3>
+        <div class="cards">
+          <div class="plan-card">
+            <div class="plan-speed"><i class="fas fa-bolt"
+                style="display: block; color: var(--color-accent); font-size: 1.6rem; margin-bottom: 0.5rem;"></i>100Mb
+              + 60GB Móvil</div>
+            <div class="plan-price">40,90 €/mes</div>
+            <button class="btn">Contratar</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+<!-- Footer -->
+
+  <footer>
+    <p>Contacto: <a href="mailto:info@wikilan.com" style="color: var(--color-accent);">info@wikilan.com</a></p>
+    <p>© 2025 Wikilan. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Script -->
+
+  <script>
+    function toggleMenu() {
+      document.body.classList.toggle('nav-open');
+    }
+
+    function mostrarZona() {
+      const valor = document.getElementById('zona').value;
+      document.querySelectorAll('.zona-content').forEach(div => div.classList.remove('active'));
+      if (valor) {
+        document.getElementById(valor).classList.add('active');
+      }
+    }
+
+  </script>
+</body>
+
+</html>

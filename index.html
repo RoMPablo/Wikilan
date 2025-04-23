@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Wikilan - Internet y Telefonía</title>
+  <link href="favicon.png" rel="icon" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <link href="imagenes/logo wikilan.png" rel="icon" type="image/png" />
+
+  <!-- Descripción de la pagina -->
+
+  <meta content="Internet y telefonía con Wikilan. Cobertura en zonas rurales y atención personalizada."
+    name="description" />
+</head>
+
+<!-- Botón de WhatsApp -->
+
+<a aria-label="Chat por WhatsApp" class="whatsapp-btn" href="https://wa.me/665097852" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+  <!-- Header fijo -->
+
+  <header class="sticky">
+
+    <!-- Logo esquina superior izquierda -->
+
+    <div class="logo"><img alt="Wikilan logo" src="imagenes/logo wikilan.png" style="height: 40px;" /></div>
+
+    <!-- Menú despegable para movil-->
+
+    <button aria-label="Abrir menú" class="menu-btn" onclick="toggleMenu()">
+      <span></span> <span></span> <span></span>
+    </button>
+
+    <!-- Menú navegación principal -->
+
+    <nav>
+      <a href="index.html" onclick="closeMenu()">Inicio</a>
+      <a href="#planes" onclick="closeMenu()">Planes</a>
+      <a href="#servicios" onclick="closeMenu()">Servicios</a>
+      <a href="#faq" onclick="closeMenu()">FAQs</a>
+      <a href="#contacto" onclick="closeMenu()">Contacto</a>
+      <a href="wikipacks.html" onclick="closeMenu()">WikiPacks</a>
+    </nav>
+  </header>
+
+  <!-- Botón para cambiar tema claro/oscuro -->
+
+  <button aria-label="Cambiar tema" class="theme-toggle" onclick="toggleTheme()">🌙</button>
+
+<!-- Contenido Principal de la página -->
+
+  <main>
+
+    <!-- Oferta destacada ( Frase al principio de la portada )-->
+
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Aprovecha 3 meses al 50%</h1>
+        <p>Internet de fibra óptica y telefonía móvil para tu hogar</p>
+        <button class="btn" onclick="scrollToPlans()">Ver planes</button>
+      </div>
+    </section>
+
+    <!-- Servicios que se ofrece -->
+
+    <section class="services" id="servicios">
+      <h2>Servicios</h2>
+      <div class="cards">
+        <!-- Fibra óptica -->
+        <div class="card fade-in">
+          <i class="fas fa-wifi fa-2x" style="color: var(--color-accent);"></i>
+          <h3>Fibra óptica</h3>
+          <p>Conexión a internet ultrarrápida y fiable</p>
+        </div>
+        <!-- Tarifa móvil -->
+        <div class="card fade-in">
+          <i class="fas fa-mobile-alt fa-2x" style="color: var(--color-accent);"></i>
+          <h3>Telefonía móvil</h3>
+          <p>Tarifas móviles con llamadas y datos</p>
+        </div>
+        <!-- Oferta Wimax -->
+        <div class="card reveal">
+          <i class="fas fa-broadcast-tower fa-2x" style="color: var(--color-accent);"></i>
+          <h3>Wimax</h3>
+          <p>Cobertura inalámbrica donde no llega la fibra.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Planes para elegir -->
+    
+    <section class="plans reveal soft-bg" id="planes">
+      <h2>Elige tu plan</h2>
+      <!-- Planes WIMAX -->
+      <h3 style="margin-top: 2rem;">WIMAX</h3>
+      <div class="cards">
+        <!-- Plan Pueblo 20MB -->
+        <div class="plan-card">
+          <i class="fas fa-wifi fa-2x" style="color: var(--color-accent);"></i>
+          <div class="plan-speed">20Mb</div>
+          <div class="plan-location">Pueblo</div>
+          <div class="plan-price">25 €/mes</div>
+          <button class="btn">Contratar</button>
+        </div>
+        <!-- Plan Fuera del Pueblo 20MB -->
+        <div class="plan-card">
+          <i class="fas fa-wifi fa-2x" style="color: var(--color-accent);"></i>
+          <div class="plan-speed">20Mb</div>
+          <div class="plan-location">Fuera del pueblo</div>
+          <div class="plan-price">30 €/mes</div>
+          <button class="btn">Contratar</button>
+        </div>
+        <!-- Plan WIMAX 50MB -->
+        <div class="plan-card">
+          <i class="fas fa-wifi fa-2x" style="color: var(--color-accent);"></i>
+          <div class="plan-speed">50Mb</div>
+          <div class="plan-location">WIMAX</div>
+          <div class="plan-price">50 €/mes</div>
+          <button class="btn">Contratar</button>
+        </div>
+        <!-- Plan WIMAX 100MB -->
+        <div class="plan-card">
+          <i class="fas fa-wifi fa-2x" style="color: var(--color-accent);"></i>
+          <div class="plan-speed">100Mb</div>
+          <div class="plan-location">WIMAX</div>
+          <div class="plan-price">100 €/mes</div>
+          <button class="btn">Contratar</button>
+        </div>
+      </div>
+
+      <!-- Planes Fibra Óptica ( Segun la zona ) -->
+      
+      <!-- FO Chaparrito-->
+      <h3 style="margin-top: 3rem;">Fibra Óptica - Chaparrito</h3>
+      <div class="cards">
+        <!-- Plan 100MB -->
+        <div class="plan-card">
+          <i class="fas fa-network-wired fa-2x" style="color: var(--color-accent); margin-bottom: 0.5rem;"></i>
+          <div class="plan-speed">100Mb</div>
+          <div class="plan-location">Chaparrito</div>
+          <div class="plan-price">35 €/mes</div>
+          <button class="btn">Contratar</button>
+        </div>
+      </div>
+      <!-- FO Puente de la Guareña / Cuartillos-->
+      <h3 style="margin-top: 3rem;">Fibra Óptica - Puente de la Guareña / Cuartillos</h3>
+      <div class="cards">
+        <!-- Plan 300MB -->
+        <div class="plan-card">
+          <i class="fas fa-network-wired fa-2x" style="color: var(--color-accent); margin-bottom: 0.5rem;"></i>
+          <div class="plan-speed">300Mb</div>
+          <div class="plan-location">Puente de la Guareña / Cuartillos</div>
+          <div class="plan-price">35 €/mes</div>
+          <button class="btn">Contratar</button>
+        </div>
+        <!-- Plan 600MB -->
+        <div class="plan-card">
+          <i class="fas fa-network-wired fa-2x" style="color: var(--color-accent); margin-bottom: 0.5rem;"></i>
+          <div class="plan-speed">600Mb</div>
+          <div class="plan-location">Puente de la Guareña / Cuartillos</div>
+          <div class="plan-price">40 €/mes</div>
+          <button class="btn">Contratar</button>
+        </div>
+      </div>
+      <!-- FO Las Abiertas-->
+      <h3 style="margin-top: 3rem;">Fibra Óptica - Las Abiertas</h3>
+      <div class="cards">
+        <!-- Plan 50MB -->
+        <div class="plan-card">
+          <i class="fas fa-network-wired fa-2x" style="color: var(--color-accent);"></i>
+          <div class="plan-speed">50Mb</div>
+          <div class="plan-location">Fibra Óptica - Las Abiertas</div>
+          <div class="plan-price">30 €/mes</div>
+          <button class="btn">Contratar</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ubicación de la empresa ( MAPS ) -->
+
+    <section class="offices reveal" id="oficinas">
+      <div class="container">
+        <h2>Nuestras oficinas</h2>
+        <p>
+          <strong>WIKILAN, SL</strong><br />
+          Polígono Industrial El Peral<br />
+          Av. Narciso Monturiol, 41<br />
+          11630 Arcos de la Frontera, Cádiz
+        </p>
+        <div class="map-card">
+          <iframe allowfullscreen="" height="250" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3203.404378326979!2d-5.814653924015102!3d36.74759737225586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0dd37c1658c715%3A0xdd62cc82ec312a23!2sWIKILAN%2C%20SL!5e0!3m2!1ses!2ses!4v1713374688741!5m2!1ses!2ses"
+            style="border:0;" width="100%">
+          </iframe>
+          <a class="btn full-width"
+            href="https://www.google.com/maps/dir/?api=1&amp;destination=WIKILAN,+SL,+Polígono+Industrial+El+Peral,+Av.+Narciso+Monturiol,+41,+11630+Arcos+de+la+Frontera,+Cádiz"
+            target="_blank">
+            Cómo llegar
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sobre la empresa -->
+
+    <section class="about reveal" id="about">
+      <h2>Sobre Wikilan</h2>
+      <p>Somos una empresa de telecomunicaciones comprometida en ofrecerte la mejor conexión a internet y servicios
+        móviles.</p>
+    </section><!-- Hacer una parte con un botón para que conozca mejor a la emrpesa -->
+
+    <!-- Preguntas Frecuentes que hacen los clientes o usuarios-->
+
+    <section class="faq reveal" id="faq">
+      <h2>Preguntas Frecuentes</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>¿Hay permanencia?</h3>
+          <p>No, nuestros servicios no tienen permanencia.</p>
+        </div>
+        <div class="card">
+          <h3>¿Qué cobertura tiene Wikilan?</h3>
+          <p>Trabajamos con cobertura nacional de alta calidad.</p>
+        </div>
+        <div class="card">
+          <h3>¿Puedo conservar mi número?</h3>
+          <p>Sí, la portabilidad es gratuita y fácil.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Razones para elegir Wikilan -->
+
+    <section class="reasons">
+      <h2>¿Por qué elegir Wikilan?</h2>
+      <ul>
+        <li>✅ Sin permanencia</li>
+        <li>✅ Cobertura en zonas rurales</li>
+        <li>✅ Atención al cliente directa</li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- Clientas satisfechos -->
+
+  <section class="testimonios reveal"
+    style="text-align:center; padding:3rem 1rem; background-color: var(--color-muted);">
+    <h2 style="color: var(--color-accent);">Clientes satisfechos</h2>
+    <blockquote>“Desde que uso Wikilan tengo cobertura incluso en el campo.”</blockquote>
+    <blockquote>“Rápida instalación y atención excelente.”</blockquote>
+  </section>
+
+  <!-- Footer -->
+
+  <footer id="contacto">
+    <p>Contacto: <a href="mailto:info@wikilan.com" style="color: var(--color-accent);">info@wikilan.com</a></p>
+    <p>© 2025 Wikilan. Todos los derechos reservados.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+
+</html>
