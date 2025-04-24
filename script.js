@@ -40,3 +40,35 @@ function toggleTheme() {
   button.textContent = body.classList.contains('light-mode') ? '🌞' : '🌙';
 }
 
+
+// Apartado del plan deseado del formulario
+
+document.addEventListener('DOMContentLoaded', function () {
+  const zonaInput = document.getElementById('zona');
+  const planSelect = document.getElementById('plan');
+  const planesContainer = document.getElementById('planes-container');
+
+  const planesPorZona = {
+    'zafra': ['Fibra 300Mb', 'Móvil 20GB', 'Televisión Básica'],
+    'jerez de los caballeros': ['Fibra 600Mb', 'Móvil 40GB'],
+    'fuente de cantos': ['Móvil 10GB', 'Televisión Premium']
+  };
+
+  const planPorDefecto = ['Consulta personalizada disponible'];
+
+  function mostrarPlanes() {
+    const zona = zonaInput.value.trim().toLowerCase();
+    const planes = planesPorZona[zona] || planPorDefecto;
+
+    planSelect.innerHTML = ''; // Limpiar opciones previas
+    planes.forEach(plan => {
+      const option = document.createElement('option');
+      option.value = plan;
+      option.textContent = plan;
+      planSelect.appendChild(option);
+    });
+    planesContainer.style.display = 'block';
+  }
+
+  zonaInput.addEventListener('input', mostrarPlanes);
+});

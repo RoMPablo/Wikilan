@@ -491,87 +491,94 @@ html {
 
 /* ------------- Formulario Planes ------------- */
 
-    /* Contenedor del formulario flotante */
-    .formulario-flotante {
-      background-color: #2a2a2a;
-      border-radius: 12px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-      width: 100%;
-      max-width: 600px;
-      margin: 2rem auto;
-      padding: 2.5rem;
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-    }
-    
-    /* Título del formulario */
-    .formulario-flotante h1 {
-      color: #ffcc00;
-      text-align: center;
-      margin-bottom: 2rem;
-      font-size: 1.8rem;
-    }
-    
-    /* Campos del formulario */
-    .campo-formulario {
-      margin-bottom: 1.5rem;
-      width: 100%;
-    }
-    
-    .campo-formulario label {
-      display: block;
-      margin-bottom: 0.5rem;
-      font-weight: 600;
-      color: #ffffff;
-    }
-    
-    .campo-formulario input,.campo-formulario select,.campo-formulario textarea {
-      width: 100%;
-      padding: 0.75rem 1rem;
-      border: 2px solid #3a3a3a;
-      border-radius: 8px;
-      background-color: #1a1a1a;
-      color: #ffffff;
-      font-size: 1rem;
-    }
-    
-    .campo-formulario input:focus,.campo-formulario select:focus,.campo-formulario textarea:focus {
-      border-color: #ffcc00;
-      outline: none;
-    }
-    
-    /* Separador */
-    .separador {
-      border: none;
-      height: 1px;
-      background-color: #3a3a3a;
-      margin: 1.5rem 0;
-    }
-    
-    /* Subtítulos */
-    .subtitulo {
-      color: #ffcc00;
-      margin-bottom: 1rem;
-      font-size: 1.2rem;
-    }
+/* ( Estructura base ) */
+.estructuraform {
+  background: #222;
+  color: var(--color-text);
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
 
+/* Contenedor del formulario flotante */
+.formulario-flotante {
+background-color: #2a2a2a;
+border-radius: 12px;
+box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+width: 100%;
+max-width: 600px;
+margin: 4rem auto;
+padding: 2.5rem;
+flex-grow: 1;
+display: flex;
+flex-direction: column;
+}
     
-    /* Botón de enviar */
-    .btn-enviar-formulario {
-      background-color: #ffcc00;
-      color: #000000;
-      border: none;
-      border-radius: 8px;
-      padding: 1rem;
-      font-size: 1rem;
-      font-weight: bold;
-      cursor: pointer;
-      margin-top: 1rem;
-      transition: background-color 0.3s ease;
-    }
+/* Título del formulario */
+.formulario-flotante h1 {
+color: #ffcc00;
+text-align: center;
+margin-bottom: 2rem;
+font-size: 1.8rem;
+}
     
-    .btn-enviar-formulario :hover {
-      background-color: #e6b800;
-    }
+/* Campos del formulario */
+.campo-formulario {
+margin-bottom: 1.5rem;
+width: 100%;
+}
+    
+.campo-formulario label {
+display: block;
+margin-bottom: 0.5rem;
+font-weight: 600;
+color: #ffffff;
+}
+    
+.campo-formulario input,.campo-formulario select,.campo-formulario textarea {
+width: 100%;
+padding: 0.75rem 1rem;
+border: 2px solid #3a3a3a;
+border-radius: 8px;
+background-color: #1a1a1a;
+color: #ffffff;
+font-size: 1rem;
+}
+    
+.campo-formulario input:focus,.campo-formulario select:focus,.campo-formulario textarea:focus {
+border-color: #ffcc00;
+outline: none;
+}
+    
+/* Separador */
+.separador {
+border: none;
+height: 1px;
+background-color: #3a3a3a;
+margin: 1.5rem 0;
+}
+    
+/* Subtítulos */
+.subtitulo {
+color: #ffcc00;
+margin-bottom: 1rem;
+font-size: 1.2rem;
+}
+    
+/* Botón de enviar */
+.btn-enviar-formulario {
+background-color: #ffcc00;
+color: #000000;
+border: none;
+border-radius: 8px;
+padding: 1rem;
+font-size: 1rem;
+font-weight: bold;
+cursor: pointer;
+margin-top: 1rem;
+transition: background-color 0.3s ease;
+}
+    
+.btn-enviar-formulario :hover {
+background-color: #e6b800;
+}
 
