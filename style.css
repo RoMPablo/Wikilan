@@ -582,3 +582,9 @@ transition: background-color 0.3s ease;
 background-color: #e6b800;
 }
 
+.precio-plan {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #ffcc00;
+  display: none;
+}

@@ -47,28 +47,59 @@ document.addEventListener('DOMContentLoaded', function () {
   const zonaInput = document.getElementById('zona');
   const planSelect = document.getElementById('plan');
   const planesContainer = document.getElementById('planes-container');
+  const precioPlan = document.getElementById('precio-plan');
 
-  const planesPorZona = {
-    'zafra': ['Fibra 300Mb', 'Móvil 20GB', 'Televisión Básica'],
-    'jerez de los caballeros': ['Fibra 600Mb', 'Móvil 40GB'],
-    'fuente de cantos': ['Móvil 10GB', 'Televisión Premium']
+  const planesYPrecios = {
+    'guarreña': [
+      { nombre: 'Seleccione una opción'},
+      { nombre: 'Fibra 300Mbs + móvil 60GB', precio: '35,95 €/mes' },
+      { nombre: 'Fibra 600Mbs + 2 móviles 60GB', precio: '45 €/mes' },
+    ],
+    'abiertas': [
+      { nombre: 'Seleccione una opción'},
+      { nombre: 'Fibra 50Mbs + móvil 60GB', precio: '35,95 €/mes' },
+    ],
+    'chaparrito': [
+      { nombre: 'Seleccione una opción'},
+      { nombre: 'Fibra 100Mbs + móvil 60GB', precio: '41,90 €/mes' },
+      { nombre: 'Fibra 100Mbs + 2 móviles 60GB', precio: '47,90 €/mes' }
+    ]
   };
 
-  const planPorDefecto = ['Consulta personalizada disponible'];
+  const planPorDefecto = [
+    { nombre: 'Seleccione una opción'},
+    { nombre: 'Fibra 100Mbs', precio: '80 €/mes' }
+  ];
 
   function mostrarPlanes() {
     const zona = zonaInput.value.trim().toLowerCase();
-    const planes = planesPorZona[zona] || planPorDefecto;
+    const planes = planesYPrecios[zona] || planPorDefecto;
 
     planSelect.innerHTML = ''; // Limpiar opciones previas
     planes.forEach(plan => {
       const option = document.createElement('option');
-      option.value = plan;
-      option.textContent = plan;
+      option.value = plan.nombre;
+      option.textContent = plan.nombre;
+      option.dataset.precio = plan.precio;
       planSelect.appendChild(option);
     });
     planesContainer.style.display = 'block';
+    
+    // Mostrar precio del primer plan por defecto
+    if (planes.length > 0) {
+      precioPlan.textContent = `Precio: ${planes[0].precio}`;
+      precioPlan.style.display = 'block';
+    }
+  }
+
+  function actualizarPrecio() {
+    const selectedOption = planSelect.options[planSelect.selectedIndex];
+    if (selectedOption && selectedOption.dataset.precio) {
+      precioPlan.textContent = `Precio: ${selectedOption.dataset.precio}`;
+      precioPlan.style.display = 'block';
+    }
   }
 
   zonaInput.addEventListener('input', mostrarPlanes);
+  planSelect.addEventListener('change', actualizarPrecio);
 });
