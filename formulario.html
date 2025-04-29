@@ -54,9 +54,9 @@
   <main >
 
     <div class="formulario-flotante">
-      <h1>Solicitud de Cambio de Plan</h1>
+      <h1>Solicitud de Contrato de Plan</h1>
       
-      <form>
+      <form action="mailto:tucorreo@wikilan.com" method="post" enctype="text/plain">
         <!-- Información personal -->
         <div class="campo-formulario">
           <label for="nombre">Nombre completo</label>
@@ -84,11 +84,13 @@
         </div>
         
         <!--Plan deseado -->
-        <h3 class="subtitulo">Plan deseado</h3>
-        <div class="campo-formulario">
-          <select id="plan" required></select>
-          <!-- Precio del plan -->
-          <div id="precio-plan" class="precio-plan"></div>
+        <div id="planes-container" style="display: none;">
+          <h3 class="subtitulo">Plan deseado</h3>
+          <div class="campo-formulario">
+            <select id="plan" required></select>
+            <!-- Precio del plan -->
+            <div id="precio-plan" class="precio-plan"></div>
+          </div>
         </div>
 
         <button type="submit" class="btn-enviar-formulario">Enviar Solicitud</button>
